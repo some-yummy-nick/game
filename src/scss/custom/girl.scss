@@ -1,0 +1,164 @@
+$animationDuration: 2s;
+.girl {
+  position: absolute;
+  top: 71%;
+  left: 44%;
+  width: 23px;
+  height: 67px;
+  background-image: url(../images/girl.png);
+  background-repeat: no-repeat;
+  transition: left 0.3s, top 0.3s;
+  will-change: left, top;
+  animation-fill-mode: forwards;
+  animation-duration: $animationDuration;
+
+  @each $iconClass in first, second, third, fourth, five, six, seven, eight,
+    nine, ten
+  {
+    &.#{$iconClass} {
+      animation-name: #{$iconClass};
+    }
+  }
+
+  @keyframes first {
+    0% {
+      top: 71%;
+      left: 44%;
+    }
+    50% {
+      top: 65%;
+      left: 38%;
+    }
+    100% {
+      top: 67%;
+      left: 35%;
+    }
+  }
+
+  @keyframes second {
+    from {
+      top: 67%;
+      left: 35%;
+    }
+    to {
+      top: 74%;
+      left: 27%;
+    }
+  }
+
+  @keyframes third {
+    from {
+      top: 74%;
+      left: 27%;
+    }
+    to {
+      top: 77%;
+      left: 19%;
+    }
+  }
+
+  @keyframes fourth {
+    from {
+      top: 77%;
+      left: 19%;
+    }
+    to {
+      top: 72%;
+      left: 10%;
+    }
+  }
+
+  @keyframes five {
+    0% {
+      top: 72%;
+      left: 10%;
+    }
+    50% {
+      top: 67%;
+      left: 8%;
+    }
+    100% {
+      top: 62%;
+      left: 12%;
+    }
+  }
+
+  @keyframes six {
+    0% {
+      top: 62%;
+      left: 12%;
+    }
+    50% {
+      top: 58%;
+      left: 11%;
+    }
+    100% {
+      top: 54%;
+      left: 14%;
+    }
+  }
+
+  @keyframes seven {
+    from {
+      top: 54%;
+      left: 14%;
+    }
+    to {
+      top: 48%;
+      left: 21%;
+    }
+  }
+
+  @keyframes eight {
+    0% {
+      top: 48%;
+      left: 21%;
+    }
+    50% {
+      top: 44%;
+      left: 23%;
+    }
+    100% {
+      top: 37%;
+      left: 17%;
+    }
+  }
+
+  @keyframes nine {
+    0% {
+      top: 37%;
+      left: 17%;
+    }
+    50% {
+      top: 31%;
+      left: 11%;
+    }
+    100% {
+      top: 28%;
+      left: 13%;
+    }
+  }
+
+  @keyframes ten {
+    0% {
+      top: 28%;
+      left: 13%;
+    }
+    25% {
+      top: 25%;
+      left: 15%;
+    }
+    50% {
+      top: 22%;
+      left: 14%;
+    }
+    75% {
+      top: 20%;
+      left: 17%;
+    }
+    100% {
+      top: 23%;
+      left: 20%;
+    }
+  }
+}

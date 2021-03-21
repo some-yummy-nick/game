@@ -1,4 +1,9 @@
 .footer {
-  flex: 0 0 auto;
-  padding-bottom: 20px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

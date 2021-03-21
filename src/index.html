@@ -2,37 +2,116 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Project</title>
+  <title>Game</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-<div class="svg-wrapper" style="height: 0; width: 0; position: absolute; visibility: hidden">
-  <svg xmlns="http://www.w3.org/2000/svg">
-    <symbol id="basket">
-      <path
-        d="M15.836 14.165a2.497 2.497 0 00-2.494 2.493 2.497 2.497 0 002.494 2.494 2.497 2.497 0 002.493-2.494 2.497 2.497 0 00-2.493-2.493zm0 3.49a.998.998 0 010-1.994.999.999 0 010 1.995zM19.841 4.526a.747.747 0 00-.589-.287H4.618l-.673-2.817a.748.748 0 00-.728-.574H.748a.748.748 0 100 1.496h1.878l2.432 10.174c.08.337.381.574.728.574h11.646a.748.748 0 00.726-.568l1.82-7.357a.75.75 0 00-.137-.64zm-2.995 7.07H6.376l-1.4-5.86h13.32l-1.45 5.86zM6.783 14.165a2.497 2.497 0 00-2.494 2.493 2.497 2.497 0 002.494 2.494 2.497 2.497 0 002.494-2.494 2.497 2.497 0 00-2.494-2.493zm0 3.49a.999.999 0 010-1.994.999.999 0 010 1.995z"></path>
-    </symbol>
-  </svg>
-</div>
+<body class="body">
 <div class="wrapper">
   <div class="content">
-    <div class="container">
-      <header class="header">
-        <svg class="icon icon_basket" width="20" height="20">
-          <use xlink:href="#basket"></use>
-        </svg>
-      </header>
-
-      <main>
-        main
-      </main>
+    <main class="main">
+      <div class="girl" id="js-girl"></div>
+      <div class="footer">
+        <div class="friends">
+          <button type="button" class="friends__arrow friends__arrow_left reset-btn" id="js-prev">
+            <img src="/images/left.png" alt="left">
+          </button>
+          <div class="friends__slider">
+            <div class="friends__items" id="js-slider-wrapper" data-current="0" data-slide="8">
+              <div class="friends__item js-slider-item">
+                <button class="friends__add reset-btn" type="button">
+                  <img src="/images/plus.png" alt="plus">
+                </button>
+                <div class="friends__user">
+                  <img src="/images/user.png" alt="user">
+                </div>
+              </div>
+              <div class="friends__item">
+                <div class="friends__user">
+                  <img src="/images/user.png" alt="user">
+                </div>
+              </div>
+              <div class="friends__item">
+                <div class="friends__user">
+                  <img src="/images/user.png" alt="user">
+                </div>
+              </div>
+              <div class="friends__item">
+                <div class="friends__user">
+                  <img src="/images/user.png" alt="user">
+                </div>
+              </div>
+              <div class="friends__item">
+                <div class="friends__user">
+                  <img src="/images/user.png" alt="user">
+                </div>
+              </div>
+              <div class="friends__item">
+                <div class="friends__user">
+                  <img src="/images/user.png" alt="user">
+                </div>
+              </div>
+              <div class="friends__item"></div>
+              <div class="friends__item"></div>
+              <div class="friends__item"></div>
+            </div>
+          </div>
+          <button type="button" class="friends__arrow friends__arrow_right reset-btn" id="js-next">
+            <img src="/images/right.png" alt="right">
+          </button>
+        </div>
+        <div class="navigation">
+          <div class="navigation__items">
+            <div class="navigation__item">
+              <button type="button" class="navigation__button reset-btn">
+                <img class="navigation__image navigation__normal" src="/images/chat.png" alt="">
+                <img class="navigation__image navigation__hover" src="/images/chat-hover.png" alt="">
+              </button>
+            </div>
+            <div class="navigation__item">
+              <button type="button" class="navigation__button reset-btn" id="js-go">
+                <img src="/images/action.png" alt="">
+              </button>
+            </div>
+            <div class="navigation__item">
+              <button type="button" class="navigation__button reset-btn">
+                <img src="/images/mail.png" alt="">
+              </button>
+            </div>
+            <div class="navigation__item">
+              <button type="button" class="navigation__button reset-btn" id="js-show-modal">
+                <img src="/images/rating.png" alt="">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--modal start-->
+    <div class="modal" id="js-modal">
+      <div class="modal__overlay" id="js-modal-overlay"></div>
+      <div class="modal__content" id="js-modal-content">
+        <button class="modal__close reset-btn" id="js-close-modal">
+          <img src="/images/close.png" width="26" height="26" alt="">
+        </button>
+        <div class="modal__title">Рейтинг игроков</div>
+        <div class="table" id="js-table">
+          <div class="table__head">
+            <div class="table__prop">Место</div>
+            <div class="table__prop">Имя Фамилия</div>
+            <div class="table__prop">Опыт</div>
+          </div>
+        </div>
+      </div>
     </div>
+    <!--modal end-->
+    <template id="js-table-row">
+      <div class="table__row">
+        <div class="table__value js-id"></div>
+        <div class="table__value js-name"></div>
+        <div class="table__value js-points"></div>
+      </div>
+    </template>
   </div>
-  <footer class="footer">
-    <div class="container">
-      footer
-    </div>
-  </footer>
 </div>
 <script src="/js/script.js"></script>
 </body>

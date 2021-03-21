@@ -3,6 +3,14 @@ body {
   height: 100%;
 }
 
+* {
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 html {
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
@@ -21,10 +29,17 @@ html {
 }
 
 .body {
+  width: 980px;
+  height: 630px;
+  margin-left: auto;
+  margin-right: auto;
   color: $color;
   font-size: 16px;
   text-rendering: optimizeSpeed;
   font-family: Montserrat, Helvetica, sans-serif;
+  background-image: url(../images/back.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 *:focus,
@@ -37,7 +52,8 @@ button:focus {
 }
 
 button {
-  transition: color 0.3s, border-color 0.3s, transform 0.3s, background-color 0.3s !important;
+  transition: color 0.3s, border-color 0.3s, transform 0.3s,
+    background-color 0.3s !important;
 }
 
 svg {
@@ -67,11 +83,14 @@ a:not([class]) {
 
 .break:after {
   // line break br with css
-  content: "\A";
+  content: '\A';
   white-space: pre;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 

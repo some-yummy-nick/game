@@ -11,7 +11,6 @@ import cssDeclarationSorter from 'css-declaration-sorter'
 import cssMqpacker from 'css-mqpacker'
 import webpack from 'webpack-stream'
 import TerserPlugin from 'terser-webpack-plugin'
-import svgSprite from 'gulp-svg-sprite'
 
 const paths = {
   styles: {
@@ -105,35 +104,6 @@ export const styles = () => {
     .pipe(sync.stream())
 }
 
-export const sprite = () => {
-  return gulp.src(paths.sprite.src)
-    .pipe(svgSprite({
-      shape: {
-        spacing: {
-          padding: 5
-        }
-      },
-      mode: {
-        css: {
-          dest: './',
-          layout: 'diagonal',
-          sprite: paths.sprite.svg,
-          bust: false,
-          render: {
-            scss: {
-              dest: 'sprite/_sprite.scss',
-              template: 'src/scss/sprite/sprite-template.scss'
-            }
-          }
-        }
-      },
-      variables: {
-        mapname: 'icons'
-      }
-    }))
-    .pipe(gulp.dest('src/scss'))
-}
-
 export const js = () => {
   return gulp.src(paths.js.src)
     .pipe(webpack({
@@ -199,6 +169,6 @@ export const watch = () => {
   gulp.watch(paths.js.all, gulp.series(js))
 }
 
-export const build = gulp.parallel(html, styles, js, sprite)
+export const build = gulp.parallel(html, styles, js)
 
-export default gulp.series(gulp.parallel(html, styles, js), sprite, gulp.parallel(watch, server))
+export default gulp.series(gulp.parallel(html, styles, js), gulp.parallel(watch, server))

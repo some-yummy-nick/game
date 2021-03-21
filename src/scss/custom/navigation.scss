@@ -1,0 +1,37 @@
+.navigation {
+  margin-right: 35px;
+
+  &__items {
+    display: flex;
+    align-items: center;
+  }
+
+  &__button {
+    position: relative;
+
+    &:hover {
+      .navigation {
+        &__normal {
+          opacity: 0;
+        }
+
+        &__hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__image {
+    transition: opacity 0.3s;
+  }
+
+  &__hover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+  }
+}
