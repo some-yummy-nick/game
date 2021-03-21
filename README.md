@@ -1,3 +1,6 @@
+![screenshot](https://github.com/some-yummy-nick/game/blob/master/some-yummy-game.png)
+
+
 https://some-yummy-game.netlify.app/
 
 gulp and webpack
