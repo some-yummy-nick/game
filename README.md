@@ -1,3 +1,5 @@
+https://some-yummy-game.netlify.app/
+
 gulp and webpack
 
 Сборка для лендинга
