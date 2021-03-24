@@ -11,7 +11,7 @@ export function data() {
     const data = await getData()
     const rating = data.rating
     const friends = data.friends
-    const sortableRating = rating.sort((a, b) => a.id - b.id)
+    const sortableRating = rating.sort((a, b) => b.points - a.points)
 
     sortableRating.forEach(user => {
       const row = document.importNode(fragment.content, true)
@@ -19,7 +19,7 @@ export function data() {
       row.querySelector('.js-id').textContent = user.id
       name.textContent = user.name
       row.querySelector('.js-points').textContent = user.points
-      friends.forEach(friend => {
+      friends.find(friend => {
         if (friend.id === user.id) {
           name.classList.add('friend')
         }

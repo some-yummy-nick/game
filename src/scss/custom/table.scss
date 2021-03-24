@@ -4,6 +4,7 @@
   margin-left: auto;
   margin-right: auto;
   padding: 30px;
+  padding-top: 0;
   background-image: url(../images/table.png);
   background-repeat: no-repeat;
   color: #fff;
@@ -19,12 +20,16 @@
   }
 
   &__head {
-    background-image: url(../images/table-head.png);
-    background-repeat: no-repeat;
+    position: sticky;
+    top: 0;
+    z-index: 1;
     display: flex;
     align-items: center;
     height: 29px;
     margin-bottom: 8px;
+    background-image: url(../images/table-head.png);
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   &__prop {
@@ -52,6 +57,7 @@
     height: 27px;
     background-image: url(../images/table-row.png);
     background-repeat: no-repeat;
+    background-size: contain;
   }
 
   &__value {
